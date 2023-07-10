@@ -9,7 +9,7 @@ services:
       context: ../..
       dockerfile: ./docker/headless/Dockerfile
       args:
-        - GOLANG_VERSION=${GOLANG_VERSION}
-        - ALPINE_VERSION=${ALPINE_VERSION}
+        - GOLANG_VERSION=${CC_BACKEND_GOLANG_VERSION}
+        - ALPINE_VERSION=${CC_BACKEND_ALPINE_VERSION}
     volumes:
       - ../..:/code
