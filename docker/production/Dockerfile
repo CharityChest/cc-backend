@@ -5,10 +5,8 @@ FROM golang:${GOLANG_VERSION}-alpine${ALPINE_VERSION} AS builder
 
 WORKDIR /app
 
-COPY ../go.mod go.sum ./
+COPY . ./
 RUN go mod download
-
-COPY ../.. ./
 
 # Build
 RUN CGO_ENABLED=0 GOOS=linux go build -o /main
